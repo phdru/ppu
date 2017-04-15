@@ -1,0 +1,14 @@
+#! /bin/sh
+
+umask 022 &&
+
+git archive --format=tar --prefix=remove-old-files/ "${1:-HEAD}" |
+   (cd "$HOME/tmp" && exec tar xf -) &&
+
+cp -ap docs "$HOME/tmp/remove-old-files" &&
+
+cd "$HOME/tmp/remove-old-files" &&
+chmod -R u=rwX,go=rX docs &&
+
+python setup.py sdist --formats=bztar &&
+cd dist && mv remove-old-files-*.tar.bz2 ../.. && cd ../.. && exec rm -rf remove-old-files

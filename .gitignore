@@ -1,0 +1,12 @@
+/.cache/
+/.tox/
+/remove-old-files.egg-info/
+/build/
+/data/
+/dist/
+/htmlcov/
+/.coverage
+/MANIFEST
+*.py[co]
+*.tmp
+*~
