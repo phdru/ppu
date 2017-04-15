@@ -33,6 +33,6 @@ setup(name='remove-old-files',
           'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6',
       ],
-      scripts=[],
+      scripts=['remove-old-files.py'],
       requires=[],
       )
