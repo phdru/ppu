@@ -18,7 +18,7 @@ setup(name='remove-old-files',
       platforms=['any'],
       keywords=[''],
       classifiers=[
-          'Development Status :: 1 - Planning',
+          'Development Status :: 2 - Pre-Alpha',
           'Environment :: Console',
           'Environment :: Web Environment',
           'Intended Audience :: End Users/Desktop',
