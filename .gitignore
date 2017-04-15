@@ -1,6 +1,6 @@
 /.cache/
 /.tox/
-/remove-old-files.egg-info/
+/remove_old_files.egg-info/
 /build/
 /data/
 /dist/
