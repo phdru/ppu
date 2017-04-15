@@ -40,17 +40,20 @@ def _test_files_not_exist(files):
 
 
 def test_rof():
-    create_files(['test'])
-    os.utime('test', (0, 0))
-    _test_files_exist(['test'])
+    create_files(['test1', 'test2'])
+    _test_files_exist(['test1', 'test2'])
+    os.utime('test2', (0, 0))
     assert os.system("remove-old-files.py --older 100 .") == 0
-    _test_files_not_exist(['test'])
+    _test_files_exist(['test1'])
+    _test_files_not_exist(['test2'])
 
 
 def test_recursive():
-    create_files(['test2'], 'subdir')
-    test_file = os.path.join('subdir', 'test2')
-    os.utime(test_file, (0, 0))
-    _test_files_exist([test_file])
+    create_files(['test3', 'test4'], 'subdir')
+    test3 = os.path.join('subdir', 'test3')
+    test4 = os.path.join('subdir', 'test4')
+    _test_files_exist([test3, test4])
+    os.utime(test4, (0, 0))
     assert os.system("remove-old-files.py --older 100 .") == 0
-    _test_files_not_exist([test_file])
+    _test_files_exist([test3])
+    _test_files_not_exist([test4])
