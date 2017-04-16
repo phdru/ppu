@@ -30,11 +30,15 @@ def create_files(files, subdirectory=None):
 
 
 def assert_files_exist(files):
+    if isinstance(files, str):
+        files = [files]
     for fname in files:
         assert os.path.exists(fname)
 
 
 def assert_files_not_exist(files):
+    if isinstance(files, str):
+        files = [files]
     for fname in files:
         assert not os.path.exists(fname)
 
@@ -44,8 +48,8 @@ def test_remove_old_files():
     assert_files_exist(['test1', 'test2'])
     os.utime('test2', (0, 0))
     assert os.system("remove-old-files.py --older 100 .") == 0
-    assert_files_exist(['test1'])
-    assert_files_not_exist(['test2'])
+    assert_files_exist('test1')
+    assert_files_not_exist('test2')
 
 
 def test_recursive():
@@ -55,5 +59,5 @@ def test_recursive():
     assert_files_exist([test3, test4])
     os.utime(test4, (0, 0))
     assert os.system("remove-old-files.py --older 100 .") == 0
-    assert_files_exist([test3])
-    assert_files_not_exist([test4])
+    assert_files_exist(test3)
+    assert_files_not_exist(test4)
