@@ -13,6 +13,7 @@ Remove old files. It's a portable replacement for
    :maxdepth: 2
    :caption: Contents:
 
+   install
    news
 
 .. highlight:: none
