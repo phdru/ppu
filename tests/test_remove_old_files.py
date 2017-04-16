@@ -39,7 +39,7 @@ def _test_files_not_exist(files):
         assert not os.path.exists(fname)
 
 
-def test_rof():
+def test_remove_old_files():
     create_files(['test1', 'test2'])
     _test_files_exist(['test1', 'test2'])
     os.utime('test2', (0, 0))
