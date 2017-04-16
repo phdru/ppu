@@ -8,7 +8,7 @@ except ImportError:
     is_setuptools = False
 
 setup(name='remove-old-files',
-      version='0.0.1',
+      version='0.1.0',
       description='Broytman remove-old-files',
       long_description=open('README.txt', 'rtU').read(),
       author='Oleg Broytman',
