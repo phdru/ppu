@@ -61,3 +61,17 @@ def test_recursive():
     assert os.system("remove-old-files.py --older 100 .") == 0
     assert_files_exist(test3)
     assert_files_not_exist(test4)
+
+
+def test_remove_empty_directory():
+    create_files(['test3', 'test4'], 'subdir')
+    test3 = os.path.join('subdir', 'test3')
+    test4 = os.path.join('subdir', 'test4')
+    assert_files_exist([test3, test4])
+    os.utime(test3, (0, 0))
+    os.utime(test4, (0, 0))
+    assert os.system("remove-old-files.py --older 100 .") == 0
+    assert_files_exist('subdir')
+    assert_files_not_exist([test3, test4])
+    assert os.system("remove-old-files.py -e --older 100 .") == 0
+    assert_files_not_exist('subdir')

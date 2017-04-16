@@ -29,6 +29,8 @@ Usage::
 
 Options::
 
+    -e, --empty-dirs
+                           remove empty directories
     -o days, --older days
                            remove files older than this number of days;
                            this is a required option
