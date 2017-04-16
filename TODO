@@ -1,4 +1,7 @@
 Add option -v/--verbose to report every removed file.
 
 
+Add options to limit files or to exclude files by name, extension, path.
+
+
 Remove empty directories.
