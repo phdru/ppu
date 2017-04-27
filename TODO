@@ -1,3 +1,6 @@
+GitHub, Travis, AppVeyor, PyPI.
+
+
 Add option -v/--verbose to report every removed file.
 
 
