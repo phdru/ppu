@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+from time import time
 import os
 import shutil
 import subprocess
@@ -8,6 +9,8 @@ from tempfile import mkdtemp
 
 
 tmp_dir = None
+old_time = time() - 1000 * 24 * 3600  # 1000 days ago
+
 for path in os.environ["PATH"].split(os.pathsep):
     path = path.strip('"')
     test_prog_path = os.path.join(path, 'remove-old-files.py')
@@ -55,7 +58,7 @@ def assert_files_not_exist(files):
 def test_remove_old_files():
     create_files(['test1', 'test2'])
     assert_files_exist(['test1', 'test2'])
-    os.utime('test2', (0, 0))
+    os.utime('test2', (old_time, old_time))
     assert subprocess.call(
         [sys.executable, test_prog_path, "--older", "100", "."]) == 0
     assert_files_exist('test1')
@@ -67,7 +70,7 @@ def test_recursive():
     test3 = os.path.join('subdir', 'test3')
     test4 = os.path.join('subdir', 'test4')
     assert_files_exist([test3, test4])
-    os.utime(test4, (0, 0))
+    os.utime(test4, (old_time, old_time))
     assert subprocess.call(
         [sys.executable, test_prog_path, "--older", "100", "."]) == 0
     assert_files_exist(test3)
@@ -79,8 +82,8 @@ def test_remove_empty_directory():
     test3 = os.path.join('subdir', 'test3')
     test4 = os.path.join('subdir', 'test4')
     assert_files_exist([test3, test4])
-    os.utime(test3, (0, 0))
-    os.utime(test4, (0, 0))
+    os.utime(test3, (old_time, old_time))
+    os.utime(test4, (old_time, old_time))
     assert subprocess.call(
         [sys.executable, test_prog_path, "--older", "100", "."]) == 0
     assert_files_exist('subdir')
