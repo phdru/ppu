@@ -1,11 +1,19 @@
 #! /usr/bin/env python
 
-import shutil
 import os
+import shutil
+import sys
 from tempfile import mkdtemp
 
 
 tmp_dir = None
+for path in os.environ["PATH"].split(os.pathsep):
+    path = path.strip('"')
+    test_prog_path = os.path.join(path, 'remove-old-files.py')
+    if os.path.exists(test_prog_path):
+        break
+else:
+    sys.exit("Cannot find remove-old-files.py in %s" % os.environ["PATH"])
 
 
 def setup():
@@ -47,7 +55,8 @@ def test_remove_old_files():
     create_files(['test1', 'test2'])
     assert_files_exist(['test1', 'test2'])
     os.utime('test2', (0, 0))
-    assert os.system("remove-old-files.py --older 100 .") == 0
+    assert os.system(
+        "%s %s --older 100 ." % (sys.executable, test_prog_path)) == 0
     assert_files_exist('test1')
     assert_files_not_exist('test2')
 
@@ -58,7 +67,8 @@ def test_recursive():
     test4 = os.path.join('subdir', 'test4')
     assert_files_exist([test3, test4])
     os.utime(test4, (0, 0))
-    assert os.system("remove-old-files.py --older 100 .") == 0
+    assert os.system(
+        "%s %s --older 100 ." % (sys.executable, test_prog_path)) == 0
     assert_files_exist(test3)
     assert_files_not_exist(test4)
 
@@ -70,8 +80,10 @@ def test_remove_empty_directory():
     assert_files_exist([test3, test4])
     os.utime(test3, (0, 0))
     os.utime(test4, (0, 0))
-    assert os.system("remove-old-files.py --older 100 .") == 0
+    assert os.system(
+        "%s %s --older 100 ." % (sys.executable, test_prog_path)) == 0
     assert_files_exist('subdir')
     assert_files_not_exist([test3, test4])
-    assert os.system("remove-old-files.py -e --older 100 .") == 0
+    assert os.system(
+        "%s %s -e --older 100 ." % (sys.executable, test_prog_path)) == 0
     assert_files_not_exist('subdir')

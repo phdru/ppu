@@ -1,4 +1,4 @@
-Travis, AppVeyor, PyPI.
+PyPI.
 
 
 Add option -v/--verbose to report every removed file.
