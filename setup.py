@@ -2,15 +2,13 @@
 
 try:
     from setuptools import setup
-    is_setuptools = True
 except ImportError:
     from distutils.core import setup
-    is_setuptools = False
 
 setup(name='remove-old-files',
-      version='0.1.0',
+      version='0.2.0',
       description='Broytman remove-old-files',
-      long_description=open('README.txt', 'rtU').read(),
+      long_description=open('README.txt', 'rU').read(),
       author='Oleg Broytman',
       author_email='phd@phdru.name',
       url='http://phdru.name/Software/Python/remove-old-files/',
@@ -18,7 +16,7 @@ setup(name='remove-old-files',
       platforms=['any'],
       keywords=[''],
       classifiers=[
-          'Development Status :: 2 - Pre-Alpha',
+          'Development Status :: 3 - Alpha',
           'Environment :: Console',
           'Environment :: Web Environment',
           'Intended Audience :: End Users/Desktop',
@@ -34,5 +32,4 @@ setup(name='remove-old-files',
           'Programming Language :: Python :: 3.6',
       ],
       scripts=['remove-old-files.py'],
-      requires=[],
       )
