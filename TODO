@@ -1,7 +1,19 @@
+Rename to "Portable Utilities".
+
+
+Add cmp.py and rm.py.
+
+
+Add which.py.
+
+
+Extend remove-old-files.py: add option -v/--verbose to report every removed file.
+
+
+Rename remove-old-files.py to find.py. Make options more GNU find-like.
+
+
 PyPI.
 
 
-Add option -v/--verbose to report every removed file.
-
-
-Add options to limit files or to exclude files by name, extension, path.
+Extend find.py: add options to limit files or to exclude files by name, extension, path.
