@@ -1,6 +1,11 @@
 News
 ====
 
+Version 0.3.0 (2017-05-??)
+--------------------------
+
+* Move cmp.py, remove-old-files.py and rm.py to scripts directory.
+
 Version 0.2.0 (2017-04-30)
 --------------------------
 
