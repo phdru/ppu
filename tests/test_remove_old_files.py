@@ -6,17 +6,14 @@ import shutil
 import subprocess
 import sys
 from tempfile import mkdtemp
+from find_in_path import find_in_path
 
 
 tmp_dir = None
 old_time = time() - 1000 * 24 * 3600  # 1000 days ago
 
-for path in os.environ["PATH"].split(os.pathsep):
-    path = path.strip('"')
-    test_prog_path = os.path.join(path, 'remove-old-files.py')
-    if os.path.exists(test_prog_path):
-        break
-else:
+test_prog_path = find_in_path('remove-old-files.py')
+if not test_prog_path:
     sys.exit("Cannot find remove-old-files.py in %s" % os.environ["PATH"])
 
 
