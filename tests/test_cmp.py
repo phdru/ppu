@@ -1,11 +1,9 @@
 #! /usr/bin/env python
 
 import os
-import shutil
 import subprocess
 import sys
-from tempfile import mkdtemp
-from find_in_path import find_in_path
+from ppu_tu import setup, teardown, find_in_path  # noqa
 
 
 tmp_dir = None
@@ -13,17 +11,6 @@ tmp_dir = None
 test_prog_path = find_in_path('cmp.py')
 if not test_prog_path:
     sys.exit("Cannot find cmp.py in %s" % os.environ["PATH"])
-
-
-def setup():
-    global tmp_dir
-    tmp_dir = mkdtemp()
-    os.chdir(tmp_dir)
-
-
-def teardown():
-    os.chdir(os.sep)  # To the root of the FS
-    shutil.rmtree(tmp_dir)
 
 
 def create_file(name, content):

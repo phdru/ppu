@@ -2,11 +2,10 @@
 
 from time import time
 import os
-import shutil
 import subprocess
 import sys
-from tempfile import mkdtemp
-from find_in_path import find_in_path
+from ppu_tu import setup, teardown, find_in_path  # noqa
+from ppu_tu import create_files, assert_files_exist, assert_files_not_exist
 
 
 tmp_dir = None
@@ -15,41 +14,6 @@ old_time = time() - 1000 * 24 * 3600  # 1000 days ago
 test_prog_path = find_in_path('remove-old-files.py')
 if not test_prog_path:
     sys.exit("Cannot find remove-old-files.py in %s" % os.environ["PATH"])
-
-
-def setup():
-    global tmp_dir
-    tmp_dir = mkdtemp()
-    os.chdir(tmp_dir)
-
-
-def teardown():
-    os.chdir(os.sep)  # To the root of the FS
-    shutil.rmtree(tmp_dir)
-
-
-def create_files(files, subdirectory=None):
-    if subdirectory:
-        os.makedirs(subdirectory)
-    else:
-        subdirectory = ''
-    for fname in files:
-        with open(os.path.join(subdirectory, fname), 'w'):
-            pass
-
-
-def assert_files_exist(files):
-    if isinstance(files, str):
-        files = [files]
-    for fname in files:
-        assert os.path.exists(fname)
-
-
-def assert_files_not_exist(files):
-    if isinstance(files, str):
-        files = [files]
-    for fname in files:
-        assert not os.path.exists(fname)
 
 
 def test_remove_old_files():
