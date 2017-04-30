@@ -1,6 +1,11 @@
 News
 ====
 
+Version 0.3.1 (2017-04-30)
+--------------------------
+
+* Fix release: build scripts with '/usr/bin/env python'
+
 Version 0.3.0 (2017-04-30)
 --------------------------
 
