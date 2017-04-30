@@ -16,7 +16,7 @@ setup(name='ppu',
       platforms=['any'],
       keywords=[''],
       classifiers=[
-          'Development Status :: 3 - Alpha',
+          'Development Status :: 4 - Beta',
           'Environment :: Console',
           'Environment :: Web Environment',
           'Intended Audience :: End Users/Desktop',

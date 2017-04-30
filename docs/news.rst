@@ -1,8 +1,10 @@
 News
 ====
 
-Version 0.2.0 (2017-05-??)
+Version 0.2.0 (2017-04-30)
 --------------------------
+
+* Add cmp.py and rm.py.
 
 * Test at Travis and AppVeyor.
 
