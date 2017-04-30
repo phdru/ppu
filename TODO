@@ -1,6 +1,3 @@
-Rename to "Portable Utilities".
-
-
 Add cmp.py and rm.py.
 
 
@@ -16,4 +13,4 @@ Rename remove-old-files.py to find.py. Make options more GNU find-like.
 PyPI.
 
 
-Extend find.py: add options to limit files or to exclude files by name, extension, path.
+Extend find.py: add options to find files by name, extension, path.

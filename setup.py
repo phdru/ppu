@@ -5,13 +5,13 @@ try:
 except ImportError:
     from distutils.core import setup
 
-setup(name='remove-old-files',
+setup(name='ppu',
       version='0.2.0',
-      description='Broytman remove-old-files',
+      description='Broytman Portable Python Utilities',
       long_description=open('README.txt', 'rU').read(),
       author='Oleg Broytman',
       author_email='phd@phdru.name',
-      url='http://phdru.name/Software/Python/remove-old-files/',
+      url='http://phdru.name/Software/Python/ppu/',
       license='GPL',
       platforms=['any'],
       keywords=[''],

@@ -2,13 +2,13 @@
 
 umask 022 &&
 
-git archive --format=tar --prefix=remove-old-files/ "${1:-HEAD}" |
+git archive --format=tar --prefix=ppu/ "${1:-HEAD}" |
    (cd "$HOME/tmp" && exec tar xf -) &&
 
-cp -ap docs "$HOME/tmp/remove-old-files" &&
+cp -ap docs "$HOME/tmp/ppu" &&
 
-cd "$HOME/tmp/remove-old-files" &&
+cd "$HOME/tmp/ppu" &&
 chmod -R u=rwX,go=rX docs &&
 
 python setup.py sdist --formats=bztar &&
-cd dist && mv remove-old-files-*.tar.bz2 ../.. && cd ../.. && exec rm -rf remove-old-files
+cd dist && mv ppu-*.tar.bz2 ../.. && cd ../.. && exec rm -rf ppu

@@ -1,13 +1,10 @@
-.. remove-old-files documentation master file, created by
+.. ppu documentation master file, created by
    sphinx-quickstart on Sat Apr 15 20:37:34 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to remove-old-files's documentation!
-============================================
-
-Remove old files. It's a portable replacement for
-`find start_dir -type f -mtime +31 -delete`.
+Portable Python Utilities
+=========================
 
 .. toctree::
    :maxdepth: 2
@@ -24,9 +21,12 @@ Command line
 remove-old-files.py
 ~~~~~~~~~~~~~~~~~~~
 
+Remove old files. It's a portable replacement for
+`find start_dir -type f -mtime +31 -delete`.
+
 Usage::
 
-    remove-old-files.py -o days start_dir
+    remove-old-files.py [-e] -o days start_dir
 
 Options::
 

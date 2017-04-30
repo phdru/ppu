@@ -6,14 +6,14 @@ System-wide
 
 ::
 
-    sudo pip install --find-links=http://phdru.name/Software/Python/ --no-index --install-option='-O2' remove-old-files
+    sudo pip install --find-links=http://phdru.name/Software/Python/ --no-index --install-option='-O2' ppu
 
 User mode
 ---------
 
 ::
 
-    pip install --find-links=http://phdru.name/Software/Python/ --no-index --install-option='-O2' --user remove-old-files
+    pip install --find-links=http://phdru.name/Software/Python/ --no-index --install-option='-O2' --user ppu
 
 For Python 2.6 the command is easy_install.
 
@@ -34,6 +34,6 @@ home directory; run run the following command:
 
     python setup.py install -O2 --user
 
-Option '--user' installs script remove-old-files.py into $HOME/.local/bin;
+Option '--user' installs scripts into $HOME/.local/bin;
 add the directory to your $PATH or move the script to a directory in your
 $PATH.
