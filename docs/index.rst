@@ -18,6 +18,15 @@ Portable Python Utilities
 Command line
 ------------
 
+cmp.py
+~~~~~~
+
+Compare two files.
+
+Usage::
+
+    cmp.py file1 file2
+
 remove-old-files.py
 ~~~~~~~~~~~~~~~~~~~
 

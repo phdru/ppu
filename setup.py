@@ -31,5 +31,5 @@ setup(name='ppu',
           'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6',
       ],
-      scripts=['remove-old-files.py'],
+      scripts=['cmp.py', 'remove-old-files.py'],
       )
