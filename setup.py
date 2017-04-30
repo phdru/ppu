@@ -6,9 +6,9 @@ except ImportError:
     from distutils.core import setup
 
 setup(name='ppu',
-      version='0.3.1',
+      version='0.3.2',
       description='Broytman Portable Python Utilities',
-      long_description=open('README.txt', 'rU').read(),
+      long_description=open('README.rst', 'rU').read(),
       author='Oleg Broytman',
       author_email='phd@phdru.name',
       url='http://phdru.name/Software/Python/ppu/',
