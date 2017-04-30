@@ -45,6 +45,15 @@ Options::
                            remove files older than this number of days;
                            this is a required option
 
+rm.py
+~~~~~
+
+Remove files.
+
+Usage::
+
+    rm.py file1 [file2...]
+
 Indices and tables
 ==================
 
