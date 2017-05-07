@@ -1,9 +1,18 @@
 #!/usr/bin/env python
 
+import sys
+
 try:
     from setuptools import setup
+    is_setuptools = True
 except ImportError:
     from distutils.core import setup
+    is_setuptools = False
+
+kw = {}
+if is_setuptools:
+    if (sys.version_info[:2] == (2, 6)):
+        kw['install_requires'].append('argparse')
 
 setup(name='ppu',
       version='0.3.2',
@@ -34,4 +43,5 @@ setup(name='ppu',
       scripts=[
           'scripts/cmp.py', 'scripts/remove-old-files.py', 'scripts/rm.py',
       ],
+      **kw
       )
