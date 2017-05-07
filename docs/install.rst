@@ -15,8 +15,6 @@ User mode
 
     pip install --find-links=http://phdru.name/Software/Python/ --no-index --install-option='-O2' --user ppu
 
-For Python 2.6 the command is easy_install.
-
 Installation from sources
 =========================
 

@@ -1,3 +1,1 @@
 --install-option=-O2
-
-argparse; python_version == '2.6'
