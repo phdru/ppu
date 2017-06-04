@@ -13,6 +13,8 @@ remove-old-files.py - remove old files. It's a portable replacement for
 
 rm.py - remove files.
 
+which.py - find a program in PATH and print full path to it.
+
 | Home Page:     http://phdru.name/Software/Python/ppu/
 | Documentation: http://phdru.name/Software/Python/ppu/docs/
 | Git repo:      http://git.phdru.name/ppu.git/
