@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-
 try:
     from setuptools import setup
 except ImportError:
@@ -35,5 +33,6 @@ setup(name='ppu',
       packages=['ppu'],
       scripts=[
           'scripts/cmp.py', 'scripts/remove-old-files.py', 'scripts/rm.py',
+          'scripts/which.py',
       ],
       )

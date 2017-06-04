@@ -1,6 +1,3 @@
-Add which.py.
-
-
 Extend remove-old-files.py: add option -v/--verbose to report every removed file.
 
 

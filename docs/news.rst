@@ -6,6 +6,10 @@ Version 0.4.0 (2017-06-??)
 
 * Add package 'ppu'.
 
+* Add module ppu/find_executable.py.
+
+* Add script which.py.
+
 Version 0.3.2 (2017-05-01)
 --------------------------
 

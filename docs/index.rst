@@ -54,6 +54,15 @@ Usage::
 
     rm.py file1 [file2...]
 
+which.py
+~~~~~~~~
+
+Find a program in PATH and print full path to it.
+
+Usage::
+
+    which.py program
+
 Indices and tables
 ==================
 
