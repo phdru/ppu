@@ -8,7 +8,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(name='ppu',
-      version='0.3.2',
+      version='0.4.0',
       description='Broytman Portable Python Utilities',
       long_description=open('README.rst', 'rU').read(),
       author='Oleg Broytman',
