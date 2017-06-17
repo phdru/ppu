@@ -73,3 +73,6 @@ build: false
 
 test_script:
   - "tox -e %TOX_ENV%"
+
+after_test:
+  - "scripts\\remove-old-files.py -o 180 %LOCALAPPDATA%\\pip\\Cache"

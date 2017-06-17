@@ -1,7 +1,12 @@
 News
 ====
 
-Version 0.4.0 (2017-06-??)
+Version 0.4.1 (2017-06-??)
+--------------------------
+
+* Use remove-old-files.py to cleanup pip cache.
+
+Version 0.4.0 (2017-06-04)
 --------------------------
 
 * Add package 'ppu'.

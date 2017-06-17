@@ -28,3 +28,6 @@ install:
 
 script:
   - tox
+
+before_cache:
+  - scripts/remove-old-files.py -o 180 ~/.cache/pip
