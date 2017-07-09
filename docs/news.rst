@@ -1,8 +1,10 @@
 News
 ====
 
-Version 0.4.1 (2017-06-??)
+Version 0.5.0 (2017-07-??)
 --------------------------
+
+* Add option -r for rm.py.
 
 * Use remove-old-files.py to cleanup pip cache.
 

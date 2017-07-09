@@ -11,7 +11,7 @@ cmp.py - compare two files.
 remove-old-files.py - remove old files. It's a portable replacement for
 `find start_dir -type f -mtime +31 -delete`.
 
-rm.py - remove files.
+rm.py - remove files and directories.
 
 which.py - find a program in PATH and print full path to it.
 
