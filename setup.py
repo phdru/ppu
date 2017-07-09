@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 
+from imp import load_source
+from os.path import abspath, dirname, join
+
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
+versionpath = join(abspath(dirname(__file__)), "ppu", "__version__.py")
+load_source("ppu_version", versionpath)
+from ppu_version import __version__  # noqa: ignore flake8 E402
+
 setup(name='ppu',
-      version='0.4.0',
+      version=__version__,
       description='Broytman Portable Python Utilities',
       long_description=open('README.rst', 'rU').read(),
       author='Oleg Broytman',
