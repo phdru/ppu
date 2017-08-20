@@ -6,8 +6,6 @@ import sys
 from ppu_tu import setup, teardown, find_in_path  # noqa
 
 
-tmp_dir = None
-
 test_prog_path = find_in_path('which.py')
 if not test_prog_path:
     sys.exit("Cannot find which.py in %s" % os.environ["PATH"])
