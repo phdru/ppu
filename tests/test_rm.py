@@ -1,6 +1,5 @@
 #! /usr/bin/env python
 
-import os
 import subprocess
 import sys
 from ppu_tu import setup, teardown, find_in_path  # noqa
@@ -8,8 +7,6 @@ from ppu_tu import create_files, assert_files_exist, assert_files_not_exist
 
 
 test_prog_path = find_in_path('rm.py')
-if not test_prog_path:
-    sys.exit("Cannot find rm.py in %s" % os.environ["PATH"])
 
 
 def test_rm():

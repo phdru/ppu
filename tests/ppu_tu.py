@@ -3,6 +3,7 @@
 
 import os
 import shutil
+import sys
 from tempfile import mkdtemp
 
 
@@ -23,6 +24,7 @@ def find_in_path(name):
         test_prog_path = os.path.join(path, name)
         if os.path.exists(test_prog_path):
             return test_prog_path
+    sys.exit("Cannot find %s in %s" % (name, os.environ["PATH"]))
 
 
 def create_files(files, subdirectory=None):

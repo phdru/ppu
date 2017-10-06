@@ -1,14 +1,11 @@
 #! /usr/bin/env python
 
-import os
 import subprocess
 import sys
 from ppu_tu import setup, teardown, find_in_path  # noqa
 
 
 test_prog_path = find_in_path('cmp.py')
-if not test_prog_path:
-    sys.exit("Cannot find cmp.py in %s" % os.environ["PATH"])
 
 
 def create_file(name, content):

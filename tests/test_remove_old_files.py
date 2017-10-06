@@ -9,8 +9,6 @@ from ppu_tu import create_files, assert_files_exist, assert_files_not_exist
 
 
 test_prog_path = find_in_path('remove-old-files.py')
-if not test_prog_path:
-    sys.exit("Cannot find remove-old-files.py in %s" % os.environ["PATH"])
 
 
 old_time = time() - 1000 * 24 * 3600  # 1000 days ago
