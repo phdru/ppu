@@ -1,3 +1,7 @@
+Test if the file is read-only in rm.py;
+ask the user if they wants to delete it.
+
+
 Add option -f for rm.py.
 
 
