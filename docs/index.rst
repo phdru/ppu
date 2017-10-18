@@ -48,11 +48,16 @@ Options::
 rm.py
 ~~~~~
 
-Remove files.
+Remove files or directories.
 
 Usage::
 
-    rm.py file1 [file2...]
+    rm.py [-r] name1 [name2...]
+
+Options::
+
+    -r, --recursive
+                           recursively remove directories
 
 which.py
 ~~~~~~~~
