@@ -48,7 +48,8 @@ Options::
 rm.py
 ~~~~~
 
-Remove files or directories.
+Remove files or directories. Ask interactively to remove read-only files or
+directories.
 
 Usage::
 
