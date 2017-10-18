@@ -5,7 +5,7 @@ import os
 import shutil
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Remove old files')
+    parser = argparse.ArgumentParser(description='Remove files/directories')
     parser.add_argument('-r', '--recursive', action='store_true',
                         help='remove directories recursively')
     parser.add_argument('names', nargs='+',
