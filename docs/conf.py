@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # ppu documentation build configuration file, created by
@@ -152,6 +151,3 @@ texinfo_documents = [
      author, 'ppu', 'Portable Python Utilities.',
      'Miscellaneous'),
 ]
-
-
-
