@@ -24,6 +24,11 @@ def test_rm():
     assert_files_exist('test1')
     assert_files_not_exist('test2')
 
+    assert subprocess.call(
+        [sys.executable, test_prog_path, "test3"]) == 1  # not exists
+    assert subprocess.call(
+        [sys.executable, test_prog_path, "-f", "test3"]) == 0
+
 
 def test_rm_recursive():
     create_files(['test'])
@@ -35,3 +40,8 @@ def test_rm_recursive():
         [sys.executable, test_prog_path, "-r", "subdir"]) == 0
     assert_files_exist('test')
     assert_files_not_exist(['subdir/subd2/test'])
+
+    assert subprocess.call(
+        [sys.executable, test_prog_path, "-r", "test3"]) == 1  # not exists
+    assert subprocess.call(
+        [sys.executable, test_prog_path, "-rf", "test3"]) == 0

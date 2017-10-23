@@ -12,6 +12,8 @@ except NameError:  # Python 3
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Remove files/directories')
+    parser.add_argument('-f', '--force', action='store_true',
+                        help='force (ignore non-existing files and errors)')
     parser.add_argument('-r', '--recursive', action='store_true',
                         help='remove directories recursively')
     parser.add_argument('names', nargs='+',
@@ -19,6 +21,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     for name in args.names:
+        if args.force and not os.path.exists(name):
+            continue
         is_dir = os.path.isdir(name)
         if not os.access(name, os.W_OK):
             if is_dir:
@@ -41,7 +45,7 @@ if __name__ == '__main__':
                 continue
         if is_dir:
             if args.recursive:
-                shutil.rmtree(name)
+                shutil.rmtree(name, args.force)
             else:
                 os.rmdir(name)
         else:
