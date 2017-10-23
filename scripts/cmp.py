@@ -29,7 +29,7 @@ if show_pbar:
 if show_pbar:
     try:
         size = os.path.getsize(fname1)
-    except:
+    except Exception:
         print(fname1, ": no such file")
         sys.exit(1)
 
