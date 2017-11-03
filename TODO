@@ -1,4 +1,4 @@
-Add option -s for cmp.py.
+Add option -s --quiet --silent for cmp.py.
 
 
 Extend remove-old-files.py: add option -v/--verbose to report every removed file.
