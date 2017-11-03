@@ -1,47 +1,9 @@
 #! /usr/bin/env python
 """cmp.py: compare two files. Portable replacement for cmp."""
 
+import argparse
 import os
 import sys
-
-if sys.argv[1] in ("-h", "--help"):
-    print("Broytman cmp.py 1.0, Copyright (C) 2003-2017 PhiloSoft Design")
-    print("Usage: cmp.py [-h|--help|-V|--version] [-i] file1 file2")
-    sys.exit()
-elif sys.argv[1] in ("-V", "--version"):
-    print("Broytman cmp.py 1.0, Copyright (C) 2003-2017 PhiloSoft Design")
-    sys.exit()
-elif sys.argv[1] == "-i":
-    show_pbar = False
-    fname1 = sys.argv[2]
-    fname2 = sys.argv[3]
-else:
-    show_pbar = sys.stderr.isatty()
-    fname1 = sys.argv[1]
-    fname2 = sys.argv[2]
-
-if show_pbar:
-    try:
-        from m_lib.pbar.tty_pbar import ttyProgressBar
-    except ImportError:
-        show_pbar = 0
-
-if show_pbar:
-    try:
-        size = os.path.getsize(fname1)
-    except Exception:
-        print(fname1, ": no such file")
-        sys.exit(1)
-
-if show_pbar:
-    pbar = ttyProgressBar(0, size)
-
-file1 = open(fname1, 'rb')
-file2 = open(fname2, 'rb')
-
-M = 1024*1024
-diff = False
-count = 0
 
 
 def report():
@@ -53,37 +15,70 @@ def report():
     diff = True
 
 
-while True:
-    block1 = file1.read(M)
-    block2 = file2.read(M)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Remove old files')
+    parser.add_argument('-i', '--inhibit-progress-bar', action='store_true',
+                        help='inhibit progress bar')
+    parser.add_argument('fname1', help='the first file name')
+    parser.add_argument('fname2', help='the second file name')
+    args = parser.parse_args()
+
+    show_pbar = not args.inhibit_progress_bar and sys.stderr.isatty()
 
     if show_pbar:
-        pbar.display(file1.tell())
+        try:
+            from m_lib.pbar.tty_pbar import ttyProgressBar
+        except ImportError:
+            show_pbar = False
 
-    if block1 and block2:
-        if len(block1) != len(block2):
+    if show_pbar:
+        try:
+            size = os.path.getsize(args.fname1)
+        except Exception:
+            print(args.fname1, ": no such file")
+            sys.exit(1)
+
+    if show_pbar:
+        pbar = ttyProgressBar(0, size)
+
+    file1 = open(args.fname1, 'rb')
+    file2 = open(args.fname2, 'rb')
+
+    M = 1024*1024
+    diff = False
+    count = 0
+
+    while True:
+        block1 = file1.read(M)
+        block2 = file2.read(M)
+
+        if show_pbar:
+            pbar.display(file1.tell())
+
+        if block1 and block2:
+            if len(block1) != len(block2):
+                report()
+                break
+        elif block1:
             report()
             break
-    elif block1:
-        report()
-        break
-    elif block2:
-        report()
-        break
-    else:
-        break
+        elif block2:
+            report()
+            break
+        else:
+            break
 
-    if block1 != block2:
-        report()
-        break
+        if block1 != block2:
+            report()
+            break
 
-    count += 1
+        count += 1
 
-if show_pbar and not diff:
-    del pbar
+    if show_pbar and not diff:
+        del pbar
 
-file1.close()
-file2.close()
+    file1.close()
+    file2.close()
 
-if diff:
-    sys.exit(1)
+    if diff:
+        sys.exit(1)
