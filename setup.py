@@ -5,8 +5,14 @@ from os.path import abspath, dirname, join
 
 try:
     from setuptools import setup
+    is_setuptools = True
 except ImportError:
     from distutils.core import setup
+    is_setuptools = False
+
+kw = {}
+if is_setuptools:
+    kw['python_requires'] = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*'
 
 versionpath = join(abspath(dirname(__file__)), "ppu", "__version__.py")
 load_source("ppu_version", versionpath)
@@ -43,4 +49,5 @@ setup(name='ppu',
           'scripts/cmp.py', 'scripts/remove-old-files.py', 'scripts/rm.py',
           'scripts/which.py',
       ],
+      **kw
       )
