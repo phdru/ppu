@@ -1,7 +1,7 @@
 News
 ====
 
-Version 0.6.0 (2017-12-??)
+Version 0.6.0 (2017-12-13)
 --------------------------
 
 * rm.py ask interactively to remove read-only files or directories.
