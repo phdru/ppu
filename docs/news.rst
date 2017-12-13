@@ -1,10 +1,12 @@
 News
 ====
 
-Version 0.6.0 (2017-10-??)
+Version 0.6.0 (2017-12-??)
 --------------------------
 
 * rm.py ask interactively to remove read-only files or directories.
+
+* Add options -s --silent --quiet for cmp.py.
 
 * Add option -f for rm.py.
 

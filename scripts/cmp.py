@@ -6,11 +6,12 @@ import os
 import sys
 
 
-def report():
+def report(silent):
     if show_pbar:
         global pbar
         del pbar
-    sys.stderr.write("Files differ at %d megabayte block\n" % count)
+    if not silent:
+        sys.stderr.write("Files differ at %d megabayte block\n" % count)
     global diff
     diff = True
 
@@ -19,11 +20,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Remove old files')
     parser.add_argument('-i', '--inhibit-progress-bar', action='store_true',
                         help='inhibit progress bar')
+    parser.add_argument('-s', '--silent', '--quiet', action='store_true',
+                        help='be silent (implied -i)')
     parser.add_argument('fname1', help='the first file name')
     parser.add_argument('fname2', help='the second file name')
     args = parser.parse_args()
 
-    show_pbar = not args.inhibit_progress_bar and sys.stderr.isatty()
+    show_pbar = not args.inhibit_progress_bar and not args.silent \
+        and sys.stderr.isatty()
 
     if show_pbar:
         try:
@@ -57,19 +61,19 @@ if __name__ == '__main__':
 
         if block1 and block2:
             if len(block1) != len(block2):
-                report()
+                report(args.silent)
                 break
         elif block1:
-            report()
+            report(args.silent)
             break
         elif block2:
-            report()
+            report(args.silent)
             break
         else:
             break
 
         if block1 != block2:
-            report()
+            report(args.silent)
             break
 
         count += 1

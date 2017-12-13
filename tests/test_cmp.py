@@ -22,4 +22,4 @@ def test_cmp_equal():
     create_file('test3', 'test3')
     create_file('test4', 'test4')
     assert subprocess.call(
-        [sys.executable, test_prog_path, "-i", "test3", "test4"]) == 1
+        [sys.executable, test_prog_path, "-s", "test3", "test4"]) == 1

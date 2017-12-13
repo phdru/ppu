@@ -25,7 +25,15 @@ Compare two files.
 
 Usage::
 
-    cmp.py file1 file2
+    cmp.py [-i] [-s --silent --quiet] file1 file2
+
+Options::
+
+    -i, --inhibit-progress-bar
+                                 inhibit progress bar
+    -s, --silent, --quiet
+                                 be silent (implied -i)
+
 
 remove-old-files.py
 ~~~~~~~~~~~~~~~~~~~
