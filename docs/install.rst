@@ -6,14 +6,14 @@ System-wide
 
 ::
 
-    sudo pip install --find-links=http://phdru.name/Software/Python/ --no-index --install-option='-O2' ppu
+    sudo pip install --install-option='-O2' ppu
 
 User mode
 ---------
 
 ::
 
-    pip install --find-links=http://phdru.name/Software/Python/ --no-index --install-option='-O2' --user ppu
+    pip install --user --install-option='-O2' ppu
 
 Installation from sources
 =========================
@@ -30,7 +30,7 @@ home directory; run run the following command:
 
 ::
 
-    python setup.py install -O2 --user
+    python setup.py install --user -O2
 
 Option '--user' installs scripts into $HOME/.local/bin;
 add the directory to your $PATH or move the script to a directory in your
