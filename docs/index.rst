@@ -58,7 +58,10 @@ Usage::
 Options::
 
     -r, --recursive
-                           recursively remove directories
+                        recursively remove directories
+    -f', --force
+                        force (ignore non-existing files and errors)
+
 
 which.py
 ~~~~~~~~
