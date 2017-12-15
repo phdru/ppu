@@ -61,14 +61,15 @@ directories.
 
 Usage::
 
-    rm.py [-r] name1 [name2...]
+    rm.py [-r] [-f] name1 [name2...]
 
 Options::
 
     -r, --recursive
                         recursively remove directories
     -f', --force
-                        force (ignore non-existing files and errors)
+                        force (ignore non-existing files and errors,
+                        remote read-only files and non-empty directories)
 
 
 which.py
