@@ -24,7 +24,7 @@ if __name__ == '__main__':
         if args.force and not os.path.exists(name):
             continue
         is_dir = os.path.isdir(name)
-        if not os.access(name, os.W_OK):
+        if not args.force and not os.access(name, os.W_OK):
             if is_dir:
                 ftype = 'directory'
             else:

@@ -1,6 +1,11 @@
 News
 ====
 
+Version 0.6.1 (2017-12-15)
+--------------------------
+
+* Fix rm.py: do not ask to remove read-only files when -f is active.
+
 Version 0.6.0 (2017-12-13)
 --------------------------
 
