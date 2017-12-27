@@ -20,3 +20,4 @@ which.py - find a program in PATH and print full path to it.
 | Git repo:      http://git.phdru.name/ppu.git/
 | GitHub repo:   https://github.com/phdru/ppu
 | Issue tracker: https://github.com/phdru/ppu/issues
+| PyPI:          https://pypi.python.org/pypi/ppu
