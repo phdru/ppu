@@ -15,11 +15,10 @@ if is_setuptools:
     kw['python_requires'] = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*'
 
 versionpath = join(abspath(dirname(__file__)), "ppu", "__version__.py")
-load_source("ppu_version", versionpath)
-from ppu_version import __version__  # noqa: ignore flake8 E402
+ppu_version = load_source("ppu_version", versionpath)
 
 setup(name='ppu',
-      version=__version__,
+      version=ppu_version.__version__,
       description='Broytman Portable Python Utilities',
       long_description=open('README.rst', 'rU').read(),
       author='Oleg Broytman',
