@@ -34,7 +34,7 @@ matrix:
     env: TOXENV=py34-flake8
 
 install:
-  - travis_retry pip install --upgrade pip setuptools tox
+  - travis_retry pip install --upgrade pip setuptools "tox <= 2.9.1"
 
 script:
   - tox
