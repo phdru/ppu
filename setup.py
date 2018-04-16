@@ -19,7 +19,7 @@ setup(
     project_urls={
         'Homepage': 'http://phdru.name/Software/Python/ppu/',
         'Documentation': 'http://phdru.name/Software/Python/ppu/docs/',
-        'Download': 'https://pypi.python.org/pypi/ppu/%s'
+        'Download': 'https://pypi.org/project/ppu/%s/'
         % ppu_version.__version__,
         'Git repo': 'http://git.phdru.name/ppu.git/',
         'Github repo': 'https://github.com/phdru/ppu',
