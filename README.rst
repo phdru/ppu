@@ -15,9 +15,9 @@ rm.py - remove files and directories.
 
 which.py - find a program in PATH and print full path to it.
 
-| Home Page:     http://phdru.name/Software/Python/ppu/
-| Documentation: http://phdru.name/Software/Python/ppu/docs/
-| Git repo:      http://git.phdru.name/ppu.git/
+| Home Page:     https://phdru.name/Software/Python/ppu/
+| Documentation: https://phdru.name/Software/Python/ppu/docs/
+| Git repo:      https://git.phdru.name/ppu.git/
 | GitHub repo:   https://github.com/phdru/ppu
 | Issue tracker: https://github.com/phdru/ppu/issues
 | PyPI:          https://pypi.org/project/ppu/

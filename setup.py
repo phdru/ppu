@@ -15,13 +15,13 @@ setup(
     long_description_content_type="text/x-rst",
     author='Oleg Broytman',
     author_email='phd@phdru.name',
-    url='http://phdru.name/Software/Python/ppu/',
+    url='https://phdru.name/Software/Python/ppu/',
     project_urls={
-        'Homepage': 'http://phdru.name/Software/Python/ppu/',
-        'Documentation': 'http://phdru.name/Software/Python/ppu/docs/',
+        'Homepage': 'https://phdru.name/Software/Python/ppu/',
+        'Documentation': 'https://phdru.name/Software/Python/ppu/docs/',
         'Download': 'https://pypi.org/project/ppu/%s/'
         % ppu_version.__version__,
-        'Git repo': 'http://git.phdru.name/ppu.git/',
+        'Git repo': 'https://git.phdru.name/ppu.git/',
         'Github repo': 'https://github.com/phdru/ppu',
         'Issue tracker': 'https://github.com/phdru/ppu/issues',
     },
