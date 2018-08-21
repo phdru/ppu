@@ -22,10 +22,6 @@ environment:
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "32"
       PYTHON_HOME: "C:\\Python27"
-    - TOXENV: "py33"
-      PYTHON_VERSION: "3.3"
-      PYTHON_ARCH: "64"
-      PYTHON_HOME: "C:\\Python33-x64"
     - TOXENV: "py36"
       PYTHON_VERSION: "3.6"
       PYTHON_ARCH: "32"
@@ -50,7 +46,7 @@ install:
   - "python --version"
   - "python -c \"import struct; print(struct.calcsize('P') * 8)\""
   - "python -m pip install --upgrade pip setuptools"
-  - "pip install --upgrade \"tox <= 2.9.1\""
+  - "pip install --upgrade tox"
   - "pip --version"
 
 # No build step - we don't have C extensions
