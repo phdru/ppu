@@ -1,8 +1,10 @@
 News
 ====
 
-Version 0.7.0 (2018-??-??)
+Version 0.7.0 (2019-02-01)
 --------------------------
+
+* Python 3.7.
 
 * Drop support for Python 3.3.
 
