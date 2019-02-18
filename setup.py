@@ -4,28 +4,21 @@ from os.path import abspath, dirname, join
 from setuptools import setup
 import sys
 
+versionpath = join(abspath(dirname(__file__)), 'ppu', '__version__.py')
+ppu_version = {}
+
 if sys.version_info[:2] == (2, 7):
-    from imp import load_source
+    execfile(versionpath, ppu_version)
 
 elif sys.version_info >= (3, 4):
-    from importlib.machinery import SourceFileLoader
-    import types
-
-    def load_source(fullname, path):
-        loader = SourceFileLoader(fullname, path)
-        loaded = types.ModuleType(loader.name)
-        loader.exec_module(loaded)
-        return loaded
+    exec(open(versionpath, 'rU').read(), ppu_version)
 
 else:
     raise ImportError("ppu requires Python 2.7 or 3.4+")
 
-versionpath = join(abspath(dirname(__file__)), "ppu", "__version__.py")
-ppu_version = load_source("ppu_version", versionpath)
-
 setup(
     name='ppu',
-    version=ppu_version.__version__,
+    version=ppu_version['__version__'],
     description='Broytman Portable Python Utilities',
     long_description=open('README.rst', 'rU').read(),
     long_description_content_type="text/x-rst",
@@ -36,7 +29,7 @@ setup(
         'Homepage': 'https://phdru.name/Software/Python/ppu/',
         'Documentation': 'https://phdru.name/Software/Python/ppu/docs/',
         'Download': 'https://pypi.org/project/ppu/%s/'
-        % ppu_version.__version__,
+        % ppu_version['__version__'],
         'Git repo': 'https://git.phdru.name/ppu.git/',
         'Github repo': 'https://github.com/phdru/ppu',
         'Issue tracker': 'https://github.com/phdru/ppu/issues',
