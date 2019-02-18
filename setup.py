@@ -8,7 +8,7 @@ versionpath = join(abspath(dirname(__file__)), 'ppu', '__version__.py')
 ppu_version = {}
 
 if sys.version_info[:2] == (2, 7):
-    execfile(versionpath, ppu_version)
+    execfile(versionpath, ppu_version)  # noqa: F821 'execfile' Py3
 
 elif sys.version_info >= (3, 4):
     exec(open(versionpath, 'rU').read(), ppu_version)
