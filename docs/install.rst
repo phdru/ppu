@@ -15,6 +15,13 @@ User mode
 
     pip install --user ppu
 
+Virtual envs
+------------
+
+::
+
+    pip install ppu
+
 Installation from sources
 =========================
 

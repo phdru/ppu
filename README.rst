@@ -21,3 +21,7 @@ which.py - find a program in PATH and print full path to it.
 | GitHub repo:   https://github.com/phdru/ppu
 | Issue tracker: https://github.com/phdru/ppu/issues
 | PyPI:          https://pypi.org/project/ppu/
+
+::
+
+    pip install ppu
