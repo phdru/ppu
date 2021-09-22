@@ -6,6 +6,12 @@ Version 0.8.0 (2021-??-??)
 
 * Python 3.8, Python 3.9.
 
+* GitHub Actions.
+
+* Stop testing at Travis CI.
+
+* Stop testing at AppVeyor.
+
 Version 0.7.0 (2019-02-01)
 --------------------------
 
