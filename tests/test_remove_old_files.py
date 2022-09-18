@@ -37,6 +37,11 @@ def test_recursive():
 
 
 def test_remove_empty_directory():
+    teardown()
+    try:
+        setup()
+    except OSError:
+        pass
     create_files(['test3', 'test4'], 'subdir')
     test3 = os.path.join('subdir', 'test3')
     test4 = os.path.join('subdir', 'test4')

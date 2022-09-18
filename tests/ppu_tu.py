@@ -15,7 +15,7 @@ def setup():
 
 def teardown():
     os.chdir(os.sep)  # To the root of the FS
-    shutil.rmtree(tmp_dir)
+    shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
 def find_in_path(name):
