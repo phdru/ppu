@@ -11,7 +11,7 @@ if sys.version_info[:2] == (2, 7):
     execfile(versionpath, ppu_version)  # noqa: F821 'execfile' Py3
 
 elif sys.version_info >= (3, 4):
-    exec(open(versionpath, 'rU').read(), ppu_version)
+    exec(open(versionpath, 'r').read(), ppu_version)
 
 else:
     raise ImportError("ppu requires Python 2.7 or 3.4+")
@@ -20,7 +20,7 @@ setup(
     name='ppu',
     version=ppu_version['__version__'],
     description='Broytman Portable Python Utilities',
-    long_description=open('README.rst', 'rU').read(),
+    long_description=open('README.rst', 'r').read(),
     long_description_content_type="text/x-rst",
     author='Oleg Broytman',
     author_email='phd@phdru.name',
@@ -54,6 +54,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     packages=['ppu'],
     scripts=[
