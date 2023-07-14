@@ -6,6 +6,8 @@ Version 0.8.1 (in development)
 
 * Python 3.11.
 
+* CI(GHActions): Install all Python and PyPy versions from ``conda-forge``.
+
 Version 0.8.0 (2021-09-24)
 --------------------------
 
