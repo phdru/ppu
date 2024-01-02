@@ -2,7 +2,7 @@ Portable Python Utilities.
 
 Author: Oleg Broytman <phd@phdru.name>.
 
-Copyright (C) 2017-2023 PhiloSoft Design.
+Copyright (C) 2017-2024 PhiloSoft Design.
 
 License: GPL.
 
