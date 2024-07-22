@@ -8,6 +8,8 @@ Version 0.8.1 (in development)
 
 * CI(GHActions): Install all Python and PyPy versions from ``conda-forge``.
 
+* CI(GHActions): Switch to ``setup-miniconda``.
+
 Version 0.8.0 (2021-09-24)
 --------------------------
 
