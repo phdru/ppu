@@ -1,19 +1,18 @@
 """PPU test utilities"""
 
-
 import os
 import shutil
 import sys
 from tempfile import mkdtemp
 
+import pytest
 
-def setup():
-    global tmp_dir
+
+@pytest.fixture(autouse=True)
+def tmp_dir():
     tmp_dir = mkdtemp()
     os.chdir(tmp_dir)
-
-
-def teardown():
+    yield
     os.chdir(os.sep)  # To the root of the FS
     shutil.rmtree(tmp_dir, ignore_errors=True)
 

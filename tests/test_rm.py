@@ -2,8 +2,10 @@
 
 import subprocess
 import sys
-from ppu_tu import setup, teardown, find_in_path  # noqa
+
 from ppu_tu import create_files, assert_files_exist, assert_files_not_exist
+from ppu_tu import find_in_path
+from ppu_tu import tmp_dir  # noqa: F401 tmp_dir imported but unused
 
 
 test_prog_path = find_in_path('rm.py')

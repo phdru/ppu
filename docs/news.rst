@@ -10,6 +10,8 @@ Version 0.8.1 (in development)
 
 * CI(GHActions): Switch to ``setup-miniconda``.
 
+* Tests: Use ``pytest.fixture``.
+
 Version 0.8.0 (2021-09-24)
 --------------------------
 
