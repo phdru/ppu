@@ -9,6 +9,7 @@ import sys
 def report(silent):
     if show_pbar:
         global pbar
+        pbar = None
         del pbar
     if not silent:
         sys.stderr.write("Files differ at %d megabayte block\n" % count)
