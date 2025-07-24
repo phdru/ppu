@@ -1,10 +1,10 @@
 News
 ====
 
-Version 0.8.1 (in development)
-------------------------------
+Version 0.8.1 (2025-08-24)
+--------------------------
 
-* Python 3.10, 3.11, 3.12, 3.13.
+* Python 3.10, 3.11, 3.12, 3.13, 3.14.
 
 * CI(GHActions): Install all Python and PyPy versions from ``conda-forge``.
 
